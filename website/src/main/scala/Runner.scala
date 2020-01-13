@@ -7,15 +7,8 @@ import scala.scalajs.js
 object Runner {
 
   def locateSuccess(pos: dom.Position): Unit = {
-      val longitude = pos.coords.longitude
-      val parNode = document.createElement("p")
-      val latitudeNode = document.createTextNode("Your Latitude is " + pos.coords.latitude)
-      val longitudeNode = document.createTextNode("Your Longitude is " + pos.coords.longitude)
-      val br = document.createElement("br")
-      parNode.appendChild(latitudeNode)
-      parNode.appendChild(br)
-      parNode.appendChild(longitudeNode)
-      document.body.appendChild(parNode)
+      appendPar(document.body, "Your Latitude is " + pos.coords.latitude)
+      appendPar(document.body, "Your Longitude is " + pos.coords.longitude)
   }
 
   def locateFailure(err: dom.PositionError): Unit = {
@@ -29,6 +22,13 @@ object Runner {
      opts.enableHighAccuracy = true
      return opts 
   }
+
+  def appendPar(targetNode: dom.Node, text: String): Unit = {
+  val parNode = document.createElement("p")
+  val textNode = document.createTextNode(text)
+  parNode.appendChild(textNode)
+  targetNode.appendChild(parNode)
+} 
 
   def main(args: Array[String]): Unit = {
 
