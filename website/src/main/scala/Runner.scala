@@ -12,8 +12,7 @@ object Runner {
   }
 
   def locateFailure(err: dom.PositionError): Unit = {
-        println(err.code)
-        println(err.message)
+        dom.window.alert(err.code + "\n" + err.message)
   }
 
   def locationOpts(): org.scalajs.dom.raw.PositionOptions = {
