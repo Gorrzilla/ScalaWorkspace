@@ -22,6 +22,18 @@ object Runner {
      return opts 
   }
 
+  def populateHeader() : Unit = {
+    //import org.scalajs.dom.Date
+
+    val div = document.createElement("h1")
+    val textNode = document.createTextNode("Welcome Andrew")
+    div.appendChild(textNode)
+    document.body.appendChild(div)
+    val tmp = js.Date().toString()
+    appendPar(document.body, tmp)
+
+  }
+
   def appendPar(targetNode: dom.Node, text: String): Unit = {
   val parNode = document.createElement("p")
   val textNode = document.createTextNode(text)
@@ -30,6 +42,8 @@ object Runner {
 } 
 
   def main(args: Array[String]): Unit = {
+
+    populateHeader()
 
     val opts = locationOpts()
     window.navigator.geolocation.getCurrentPosition(
