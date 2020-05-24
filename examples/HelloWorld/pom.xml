@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <!-- groupId uniquely identifies your project across all projects.-->
-  <groupId>com.leonardocompany.examples</groupId>
+  <groupId>com.catalyst.examples</groupId>
 
   <!-- artifactId is the name of the jar without version. Generally this is the name of the project-->
   <artifactId>HelloWorld</artifactId>
@@ -110,7 +110,7 @@
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>com.leonardocompany.examples.HelloWorld</mainClass>
+            <mainClass>com.catalyst.examples.HelloWorld</mainClass>
           </manifest>
         </archive>
       </configuration>
@@ -121,7 +121,7 @@
       <configuration>
         <archive>
           <manifest>
-            <mainClass>com.leonardocompany.examples.HelloWorld</mainClass>
+            <mainClass>com.catalyst.examples.HelloWorld</mainClass>
           </manifest>
         </archive>
         <descriptorRefs>
