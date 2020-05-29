@@ -17,6 +17,18 @@ All Dependencies relate to the Scala version. If you have a different scala vers
 [Maven Repository](https://mvnrepository.com/)
 
  
+## Package Jar without Dependencies
+
+
+
+Run the following command (command prompt/bash terminal) in same directory that pom.xml is in:
+
+
+```maven
+
+mvn clean package
+
+```
 
  
 
