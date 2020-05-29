@@ -25,9 +25,7 @@ Run the following command (command prompt/bash terminal) in same directory that 
 
 
 ```maven
-
 mvn clean package
-
 ```
 
  
@@ -41,9 +39,7 @@ Run the following command (command prompt/bash terminal) in same directory that 
  
 
 ```maven
-
 mvn clean compile assembly:single
-
 ```
 
  
@@ -53,7 +49,5 @@ mvn clean compile assembly:single
 Run the following command (command prompt/bash terminal):
 
 ```java
-
 java -jar <path to jar>
-
 ```
