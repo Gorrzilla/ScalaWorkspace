@@ -10,6 +10,9 @@ object SimpleSpark{
 
 def main(args : Array[String]){
     
+    val conf = new SparkConf().setAppName("Log Level Instance Count")
+    val sc = new SparkContext(conf)
+
     var filePath = args[0];
     var isFile = new File(filePath).exists();
     
@@ -21,9 +24,8 @@ def main(args : Array[String]){
         var instanceCount = 0;
         for (level <- levelList ){
             instanceCount = df.filter(col("line").like(level)).count();
-            println(level + "Occurs " + instanceCount + "Times.")
+            println(level + " Occurs " + instanceCount + "Times.")
         }
-        
     }
     else{
         println(filePath + " Does Not Exist.")
