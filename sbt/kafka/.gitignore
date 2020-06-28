@@ -5,22 +5,10 @@ project/
 target/
 build/
 
-# eclipse
-build
-.classpath
-.project
-.settings
-.worksheet
+# VSCode IDE w/ Metals
+.bloop/
+.metals/
 
-# intellij idea
-*.log
-*.iml
-*.ipr
-*.iws
-.idea
-
-# mac
-.DS_Store
 
 # other?
 .history
