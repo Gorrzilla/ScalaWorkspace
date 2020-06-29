@@ -5,10 +5,11 @@ project/
 target/
 build/
 
-# VSCode IDE w/ Metals
+# IDE (VScode/ IntelliJ)
 .bloop/
 .metals/
-
+.idea
+*.iml
 
 # other?
 .history
