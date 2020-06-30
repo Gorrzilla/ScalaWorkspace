@@ -65,3 +65,10 @@ Coupled with the knowledge that both tools have access to the same libraries, th
  - [Maven](docs/MavenGettingStarted.md)
  
  - [sbt](docs/SBTGettingStarted.md)
+ 
+ A perfectly legitimate question to ask at this stage is: 
+    ""**Why Use A Build Tool?**"
+    
+  We might start off writing applications that only consist of one or two source files, and so compiling these manually takes next to no time.
+  However, consider scaling up to a project with tens/hundreds of sources (like any Apache Project). This would be very tedious, and so we use a build tool
+  because life is too short!
