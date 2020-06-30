@@ -57,6 +57,11 @@ importing builds incorrectly, and occasionally the linting wasn't working correc
 
 ## Getting Started With The Build Tools
 
+Originally it was intended to use Maven for this purpose, however the 
+general concensus is that Maven attempts to be ‘the best of both worlds' facilitating both Scala and Java, whereas sbt is singularly [focussed](https://stackoverflow.com/questions/11277967/pros-and-cons-of-using-sbt-vs-maven-in-scala-project).
+
+Coupled with the knowledge that both tools have access to the same libraries, there is limited drawback beyond the initial learning curve.
+
  - [Maven](docs/MavenGettingStarted.md)
  
  - [sbt](docs/SBTGettingStarted.md)
