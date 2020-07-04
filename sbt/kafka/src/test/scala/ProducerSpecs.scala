@@ -43,7 +43,7 @@ class ProducerSpecs extends FunSpec with GivenWhenThen{
         it("Should only allow valid ip addresses to be set"){
 
           Given("The user provides the port")
-          val port = "172.8.7.28"
+          val port = "256.8.7.28"
 
           When("After it has been created")
           val cfg = new KafkaConfig()
