@@ -9,8 +9,6 @@ class KafkaConfig() {
   private var _brokerPort: String = ""
   private var _topic: String = ""
   private var _groupID: Int = null
-  private var producerConfiguration: Properties = _
-  private var consumerConfiguration: Properties = _
 
   //Getter
   def brokerPort: String = _brokerPort
