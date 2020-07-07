@@ -57,7 +57,7 @@ class KafkaConfig() {
     }
   }
 
-  private def createProducerConfiguration(brokers: String): Properties = {
+  def createProducerConfiguration(brokers: String): Properties = {
     val props = new Properties()
     props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, brokers)
     props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer].getCanonicalName)
@@ -65,7 +65,7 @@ class KafkaConfig() {
     props
   }
 
-  private def createConsumerConfiguration(brokers: String, groupID: Int): Properties = {
+  def createConsumerConfiguration(brokers: String, groupID: Int): Properties = {
       val props = new Properties()
       props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, brokers)
       props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer].getCanonicalName)
