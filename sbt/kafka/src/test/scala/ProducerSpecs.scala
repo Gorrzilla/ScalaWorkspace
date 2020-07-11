@@ -1,5 +1,4 @@
-import org.scalatest.FunSpec
-import org.scalatest.GivenWhenThen
+import org.scalatest.{FunSpec, GivenWhenThen}
 
 class ProducerSpecs extends FunSpec with GivenWhenThen{
   {
