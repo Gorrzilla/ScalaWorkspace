@@ -23,15 +23,15 @@ abstract class ProducerSource {
   }
 
     private class TextBased extends ProducerSource {
-      override def process: Queue[String] ={}
+      override def process: Queue[String] ={ Queue[String]()}
     }
 
     private class BinaryBased extends ProducerSource {
-      override def process : Queue[String] ={}
+      override def process : Queue[String] ={Queue[String]()}
     }
 
     private class PacketBased extends ProducerSource {
-      override def process : Queue[String] = {}
+      override def process : Queue[String] = {Queue[String]()}
     }
 
     //Factory method
