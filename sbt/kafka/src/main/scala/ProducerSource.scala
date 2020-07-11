@@ -1,31 +1,37 @@
+//https://alvinalexander.com/scala/factory-pattern-in-scala-design-patterns/
+
 import java.io.File
-import scala.io.StdIn
 import java.nio.file.Paths
+import scala.collection.mutable.Queue
+
+import scala.io.StdIn
 
 abstract class ProducerSource {
-  def process(): Unit
+  def process(): Queue[String]
 }
 
   object ProducerSource {
 
   private class CommandLineConsole extends ProducerSource {
-    override def process: Unit ={
-      println("Enter message (type exit to quit)")
+    override def process: Queue[String] = {
+
+      var bufferQueue = Queue[String]()
       var message = StdIn.readLine()
+      bufferQueue += message
 
     }
   }
 
     private class TextBased extends ProducerSource {
-      override def process{}
+      override def process: Queue[String] ={}
     }
 
     private class BinaryBased extends ProducerSource {
-      override def process{}
+      override def process : Queue[String] ={}
     }
 
     private class PacketBased extends ProducerSource {
-      override def process {}
+      override def process : Queue[String] = {}
     }
 
     //Factory method
