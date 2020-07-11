@@ -2,14 +2,27 @@ import java.util.Properties
 
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 
-class Producer (cfg : KafkaConfig){
-  val kafkaProducerConfig: Properties = cfg.createProducerConfiguration(cfg.topic)
-
-  val producer = new KafkaProducer[String, String](kafkaProducerConfig)
+class Producer (cfg : KafkaConfig, source : ProducerSource){
 
   def sendMessages(producerSource: ProducerSource): Unit = {
-    producerSource.process()
+    while (true) {
+      // fetch from queue
+      val activeQueue = producerSource.process()
+      val message = activeQueue.dequeue()
+
+      val record = new ProducerRecord[String, String](cfg.topic, "1", message)
+
+      producer.send(record)
+
+    }
+    producer.close()
   }
+
+    val kafkaProducerConfig: Properties = cfg.createProducerConfiguration(cfg.topic)
+
+    val producer = new KafkaProducer[String, String](kafkaProducerConfig)
+
+    sendMessages(source)
 
 }
 
@@ -24,9 +37,8 @@ object Producer extends App {
   }
 
   val prodSource = ProducerSource.apply(args(2))
-  val producer = new Producer(kafkaConfig)
+  val producer = new Producer(kafkaConfig, prodSource)
 
-  producer.sendMessages(prodSource)
 }
 
 //TODO add logging framework
